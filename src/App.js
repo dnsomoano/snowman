@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import words from "./Data/words.json";
+
+const ALPHABET = "abcdefghijklmnopqrstuvwxyz".split("");
 
 class App extends Component {
   render() {
+    // const randomWord = Math.floor(Math.random(words[Math.floor] * 2));
+    // console.log(randomWord);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {ALPHABET.map((letter, i) => {
+          return <button key={i}>{letter}</button>;
+        })}
       </div>
     );
   }
